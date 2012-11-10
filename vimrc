@@ -11,6 +11,9 @@ call pathogen#runtime_append_all_bundles()
 
 "=============== END KEY SETTINGS ==================================
 
+"Always load syntax on"
+syntax on
+
 set lines=50 columns=130 "Default size
 set nocompatible	"Use Vim Settings, rather than Vi settings
 set smartindent		"Settings for smart indentation
@@ -35,6 +38,8 @@ set colorcolumn=80	"80-character indicator line
 set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 colorscheme default
 
+"Set backspace 
+set backspace=indent,eol,start
 "Always enable Powerline
 set laststatus=2    "Always show status line
 set encoding=utf-8  "	show Unicode glyphs
@@ -99,3 +104,5 @@ nnoremap <Leader>sr :%s/
 command WriteForce w<Space>!sudo<Space>tee<Space>%
 nnoremap <Leader>wf :WriteForce<CR>
 
+"Map switching tab for NERDTREE"
+nnoremap <Tab> <C-w>w
