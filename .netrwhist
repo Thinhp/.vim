@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/thinhubu/.PlayOnLinux'
+let g:netrw_dirhist_2='/home/thinhubu/Desktop/.vim'
+let g:netrw_dirhist_3='/home/thinhubu/.PlayOnLinux/configurations'
+let g:netrw_dirhist_4='/home/thinhubu/Dropbox/Courses'
+let g:netrw_dirhist_5='/home/thinhubu'
