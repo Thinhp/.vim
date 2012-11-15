@@ -1,4 +1,9 @@
 .vim
 ====
 
-Vim folder for configuration
+My Vim folder for configuration
+
+/*Feafures */
+- Many self-configurated key mapping
+- NERDTree and Tagbar installed
+- Custom Color Scheme for Gvim

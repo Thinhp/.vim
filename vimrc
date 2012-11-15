@@ -14,7 +14,7 @@ call pathogen#runtime_append_all_bundles()
 "Always load syntax on"
 syntax on
 
-set lines=50 columns=130 "Default size
+set lines=55 columns=130 "Default size
 set nocompatible	"Use Vim Settings, rather than Vi settings
 set smartindent		"Settings for smart indentation
 set autoindent 		"Settings for auto indentation
@@ -36,7 +36,7 @@ set wildignore =*.swp,*.bak,*.pyc,*.class
 set title		"Change terminal title
 set colorcolumn=80	"80-character indicator line
 set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
-colorscheme default
+colorscheme thinhcustom
 
 "Set backspace 
 set backspace=indent,eol,start
@@ -72,6 +72,7 @@ endif
 "Auto call NerdTree when start-up
 autocmd VimEnter * NERDTree
 
+
 "Auto quit NerdTree if it stands alone
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 function! s:CloseIfOnlyNerdTreeLeft()
@@ -84,6 +85,21 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
+autocmd WinEnter * call s:CloseNerdTreeTagBar()
+function! s:CloseNerdTreeTagBar()
+    let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+
+  if exists("t:NERDTreeBufName")
+    if nerdtree_open && tagbar_open
+      if winnr("$") == 2
+        NERDTreeClose
+        TagbarClose
+      endif
+    endif
+  endif
+endfunction
+
 " Auto reload .vimrc
 " The call Pl#Load() at the end is to reload Powerine
 ""augroup myvimrc
@@ -91,6 +107,9 @@ endfunction
 ""    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | 
 ""    if has('gui_running') | so $MYGVIMRC | endif | call Pl#Load()
 ""augroup END
+
+"Auto enter Tagbar when start up"
+autocmd VimEnter * TagbarOpen
 
 "================== CHANGES PRESSING KEYS ===============================
 
@@ -106,3 +125,8 @@ nnoremap <Leader>wf :WriteForce<CR>
 
 "Map switching tab for NERDTREE"
 nnoremap <Tab> <C-w>w
+
+"Toggle some plugins"
+nnoremap <F8> :NERDTreeToggle<CR>
+nnoremap <F9> :TagbarToggle<CR>
+
