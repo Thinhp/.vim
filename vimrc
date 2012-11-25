@@ -36,7 +36,7 @@ set wildignore =*.swp,*.bak,*.pyc,*.class
 set title		"Change terminal title
 set colorcolumn=80	"80-character indicator line
 set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
-colorscheme thinhcustom
+colorscheme wombat
 
 "Set backspace 
 set backspace=indent,eol,start
@@ -74,17 +74,18 @@ autocmd VimEnter * NERDTree
 
 
 "Auto quit NerdTree if it stands alone
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
+""autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+""function! s:CloseIfOnlyNerdTreeLeft()
+""  if exists("t:NERDTreeBufName")
+""    if bufwinnr(t:NERDTreeBufName) != -1
+""      if winnr("$") == 1
+""        q
+""      endif
+""    endif
+""  endif
+""endfunction
 
+"Auto quit both NerdTree and Tagbar
 autocmd WinEnter * call s:CloseNerdTreeTagBar()
 function! s:CloseNerdTreeTagBar()
     let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
@@ -92,7 +93,7 @@ function! s:CloseNerdTreeTagBar()
 
   if exists("t:NERDTreeBufName")
     if nerdtree_open && tagbar_open
-      if winnr("$") == 2
+      if winnr("$") == 2 || winnr("$") == 1
         NERDTreeClose
         TagbarClose
       endif
@@ -130,3 +131,11 @@ nnoremap <Tab> <C-w>w
 nnoremap <F8> :NERDTreeToggle<CR>
 nnoremap <F9> :TagbarToggle<CR>
 
+"Change Tab key and next,previous tab to Ctrl t,[,]"
+nnoremap <A-t> :tabe 
+nnoremap <A-b> gT
+nnoremap <A-n> gt
+
+"Remap jump up and down text "
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
