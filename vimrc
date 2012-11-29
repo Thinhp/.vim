@@ -112,6 +112,27 @@ endfunction
 "Auto enter Tagbar when start up"
 autocmd VimEnter * TagbarOpen
 
+" Move current tab into the specified direction.
+" @param direction -1 for left, 1 for right.
+function! TabMove(direction)
+    " get number of tab pages.
+    let ntp=tabpagenr("$")
+    " move tab, if necessary.
+    if ntp > 1
+        " get number of current tab page.
+        let ctpn=tabpagenr()
+        " move left.
+        if a:direction < 0
+            let index=((ctpn-1+ntp-1)%ntp)
+        else
+            let index=(ctpn%ntp)
+        endif
+
+        " move tab page.
+        execute "tabmove ".index
+    endif
+endfunction
+
 "================== CHANGES PRESSING KEYS ===============================
 
 " ';' can be used as ':'
@@ -139,3 +160,7 @@ nnoremap <A-n> gt
 "Remap jump up and down text "
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+
+"Move tab left or right
+nnoremap <S-b> :call TabMove(-1)<CR>
+nnoremap <S-n> :call TabMove(1)<CR>
