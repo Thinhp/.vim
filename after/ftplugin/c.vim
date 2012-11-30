@@ -5,6 +5,10 @@ setlocal comments+=f://
 " Compile and run current file
 nnoremap <Leader>r :w<CR>:!gcc<Space>-Wall<Space>-ansi<Space>-pedantic<Space>%<Space>-o<Space>%:r<Space>&&<Space>./%:r<CR>
 
+"Change gcc alias"
+nnoremap <F4> :!gcc -Wall -ansi -pedantic
+
+
 " Ask user which files to compile (separated by spaces)
 nnoremap <F5> :w<CR>:call ThinhpCompileSpecific()<CR>
 function! ThinhpCompileSpecific()

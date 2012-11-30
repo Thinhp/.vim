@@ -26,6 +26,7 @@ set smarttab		"Insert tabs-start of a line by shiftwidth, not tabstop
 set hlsearch		"Highlight search terms
 set incsearch		"Show search matches as we type
 set cindent		"Settings for c indent
+set expandtab		"Use softtabstop spaces instead of tab for indentation
 set number		"Set line numbers
 set shiftwidth=4	"Indent by 4 spaces when pressing >>, <<, ==
 set shiftround		"Use multiple of shiftwidth when indenting < or >
@@ -40,14 +41,19 @@ colorscheme wombat
 
 "Set backspace 
 set backspace=indent,eol,start
+
 "Always enable Powerline
 set laststatus=2    "Always show status line
 set encoding=utf-8  "	show Unicode glyphs
 
 "Do not keep backup files
-set nobackup
-set nowritebackup
-set noswapfile
+"set nobackup
+"set nowritebackup
+"set noswapfile
+
+    " On second thought, keep backup files"
+set backupdir=~/tmp
+set directory=~/tmp
 
 "Easier block indenting (does not exit visual mode after once)
 vnoremap < <gv
@@ -134,7 +140,6 @@ function! TabMove(direction)
 endfunction
 
 "================== CHANGES PRESSING KEYS ===============================
-
 " ';' can be used as ':'
 nnoremap ; :
 
