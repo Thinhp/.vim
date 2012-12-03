@@ -12,5 +12,5 @@ set guioptions-=L
 " Set colorscheme
 colorscheme thinhcustom
 
-set lines=47 columns=156 "Default size
-
+set lines=47 columns=170 "Default size
+set gfn=Monospace\ 12

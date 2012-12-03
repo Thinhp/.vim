@@ -76,7 +76,7 @@ if (!has('gui_running'))
 endif
 
 "Auto call NerdTree when start-up
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 
 "Auto quit NerdTree if it stands alone
@@ -92,20 +92,20 @@ autocmd VimEnter * NERDTree
 ""endfunction
 
 "Auto quit both NerdTree and Tagbar
-autocmd WinEnter * call s:CloseNerdTreeTagBar()
-function! s:CloseNerdTreeTagBar()
-    let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
-    let tagbar_open = bufwinnr('__Tagbar__') != -1
-
-  if exists("t:NERDTreeBufName")
-    if nerdtree_open && tagbar_open
-      if winnr("$") == 2 || winnr("$") == 1
-        NERDTreeClose
-        TagbarClose
-      endif
-    endif
-  endif
-endfunction
+"autocmd WinEnter * call s:CloseNerdTreeTagBar()
+"function! s:CloseNerdTreeTagBar()
+"    let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+"    let tagbar_open = bufwinnr('__Tagbar__') != -1
+"
+"  if exists("t:NERDTreeBufName")
+"    if nerdtree_open && tagbar_open
+"      if winnr("$") == 2 || winnr("$") == 1
+"        NERDTreeClose
+"        TagbarClose
+"      endif
+"    endif
+"  endif
+"endfunction
 
 " Auto reload .vimrc
 " The call Pl#Load() at the end is to reload Powerine
@@ -116,7 +116,7 @@ endfunction
 ""augroup END
 
 "Auto enter Tagbar when start up"
-autocmd VimEnter * TagbarOpen
+"autocmd VimEnter * TagbarOpen
 
 " Move current tab into the specified direction.
 " @param direction -1 for left, 1 for right.
