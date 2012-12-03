@@ -76,20 +76,20 @@ if (!has('gui_running'))
 endif
 
 "Auto call NerdTree when start-up
-"autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree
 
 
 "Auto quit NerdTree if it stands alone
-""autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-""function! s:CloseIfOnlyNerdTreeLeft()
-""  if exists("t:NERDTreeBufName")
-""    if bufwinnr(t:NERDTreeBufName) != -1
-""      if winnr("$") == 1
-""        q
-""      endif
-""    endif
-""  endif
-""endfunction
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
 
 "Auto quit both NerdTree and Tagbar
 "autocmd WinEnter * call s:CloseNerdTreeTagBar()
