@@ -37,13 +37,21 @@ set wildignore =*.swp,*.bak,*.pyc,*.class
 set title		"Change terminal title
 set colorcolumn=80	"80-character indicator line
 set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
-colorscheme wombat
+
+"Set colorscheme 
+if (has('gui_running'))
+    colorscheme wombat256mod
+    se t_Co=256
+else
+    colorscheme wombat256mod
+    se t_Co=256
+endif
 
 "Set backspace 
 set backspace=indent,eol,start
 
 "Always enable Powerline
-set laststatus=2    "Always show status line
+set laststatus=1    "Always show status line
 set encoding=utf-8  "	show Unicode glyphs
 
 "Do not keep backup files
@@ -159,8 +167,11 @@ nnoremap <F9> :TagbarToggle<CR>
 
 "Change Tab key and next,previous tab to Ctrl t,[,]"
 nnoremap <A-t> :tabe 
+nnoremap <c-t> :tabe 
 nnoremap <A-b> gT
 nnoremap <A-n> gt
+nnoremap <C-b> gT
+nnoremap <C-n> gt
 
 "Remap jump up and down text "
 nnoremap <C-j> <C-d>
