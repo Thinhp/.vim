@@ -1,0 +1,44 @@
+/* ----------- VIM HOTKEYS HELPFILE ------------- */
+
+/*Indentation - Move block of lines to left or right */
+SHIFT + '>'  : move to right one indent
+SHIFT + '<'  : move to left one indent
+
+/* Search and Replace*/
+<Leader> + 'sr' : automatically type :%s/
+--> :%s/[keytoreplace]/[replace]/g
+
+/* Write force */
+<Leader>wf
+
+/*Map switching tab for NERDTREE*/
+<Tab> <C-w>w
+
+/*Toggle some plugins*/
+<F8> :NERDTreeToggle<CR>
+<F9> :TagbarToggle<CR>
+
+/*Change Tab key and next,previous tab to Ctrl t,[,]*/
+<A-t> : create new tab 
+<c-t> : create new tab 
+<A-b> gT : move to previous tab
+<A-n> gt : move to next tab
+<C-b> gT : move to previous tab
+<C-n> gt : move to next tab
+
+/*Remap jump up and down text */
+<C-j> <C-d>
+<C-k> <C-u>
+--> much easier
+
+/*Move tab left or right*/
+<S-b> : move tab left
+<S-n> : move tab right
+
+/*Fold and unfold lines*/
+zf : fold lines
+za : unfold lines
+
+/*Super comment*/
+<Command> cc : comments all
+<Command> cu : uncomments all

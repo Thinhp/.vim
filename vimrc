@@ -63,10 +63,6 @@ set encoding=utf-8  "	show Unicode glyphs
 set backupdir=~/tmp
 set directory=~/tmp
 
-"Easier block indenting (does not exit visual mode after once)
-vnoremap < <gv
-vnoremap > >gv
-
 filetype plugin indent on	"Turn on indentation for recognized file types
 
 " Auto change working directory to current file's
@@ -148,8 +144,15 @@ function! TabMove(direction)
 endfunction
 
 "================== CHANGES PRESSING KEYS ===============================
+"Promp Vim hotkey helpfile
+nnoremap <F12> :!less helpcommand 
+
 " ';' can be used as ':'
 nnoremap ; :
+
+"Easier block indenting (does not exit visual mode after once)
+vnoremap < <gv
+vnoremap > >gv
 
 "Change search and replace settins
 nnoremap <Leader>sr :%s/
