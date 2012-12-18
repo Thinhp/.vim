@@ -145,7 +145,7 @@ endfunction
 
 "================== CHANGES PRESSING KEYS ===============================
 "Promp Vim hotkey helpfile
-nnoremap <F12> :!less helpcommand 
+nnoremap <F12> :!less ~/.vim/helpcommand 
 
 " ';' can be used as ':'
 nnoremap ; :
@@ -176,9 +176,11 @@ nnoremap <A-n> gt
 nnoremap <C-b> gT
 nnoremap <C-n> gt
 
-"Remap jump up and down text "
+"Remap jump up and down text, left right to at the edge"
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+nnoremap <C-h> _
+nnoremap <C-l> $
 
 "Move tab left or right
 nnoremap <S-b> :call TabMove(-1)<CR>

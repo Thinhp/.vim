@@ -42,3 +42,8 @@ za : unfold lines
 /*Super comment*/
 <Command> cc : comments all
 <Command> cu : uncomments all
+
+/*Valgrind check memory leak command*/
+valgrind --track-origins=yes --tool=memcheck --leak-check=yes -v ./gjc menu.dat submenu.dat
+
+
