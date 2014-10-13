@@ -38,7 +38,7 @@ The following features and functionality are provided by the NERD tree:
     * All filesystem information is cached and is only re-read on demand
     * If you revisit a part of the tree that you left earlier in your
       session, the directory nodes will be opened/closed as you left them
-  * The script remembers the cursor position and window position in the NERD
+uuuu
     tree so you can toggle it off (or just close the tree window) and then
     reopen it (with NERDTreeToggle) the NERD tree window will appear exactly
     as you left it

@@ -14,7 +14,7 @@ call pathogen#runtime_append_all_bundles()
 "Always load syntax on"
 syntax on
 
-set lines=55 columns=130 "Default size
+"set lines=55 columns=130 "Default size
 set nocompatible	"Use Vim Settings, rather than Vi settings
 set smartindent		"Settings for smart indentation
 set autoindent 		"Settings for auto indentation
@@ -40,10 +40,10 @@ set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
 if (has('gui_running'))
-    colorscheme wombat256mod
+    colorscheme thinhcustom
     se t_Co=256
 else
-    colorscheme wombat256mod
+    colorscheme thinhcustom
     se t_Co=256
 endif
 
@@ -80,7 +80,7 @@ if (!has('gui_running'))
 endif
 
 "Auto call NerdTree when start-up
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 
 "Auto quit NerdTree if it stands alone
@@ -114,9 +114,9 @@ endfunction
 " Auto reload .vimrc
 " The call Pl#Load() at the end is to reload Powerine
 ""augroup myvimrc
-""    au!
-""    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | 
-""    if has('gui_running') | so $MYGVIMRC | endif | call Pl#Load()
+    ""au!
+    ""au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | 
+    ""if has('gui_running') | so $MYGVIMRC | endif | call Pl#Load()
 ""augroup END
 
 "Auto enter Tagbar when start up"
