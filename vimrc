@@ -40,10 +40,10 @@ set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
 if (has('gui_running'))
-    colorscheme thinhcustom
+    colorscheme ir_black
     se t_Co=256
 else
-    colorscheme thinhcustom
+    colorscheme ir_black
     se t_Co=256
 endif
 
