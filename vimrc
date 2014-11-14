@@ -40,10 +40,10 @@ set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
 if (has('gui_running'))
-    colorscheme ir_black
+    colorscheme grb256
     se t_Co=256
 else
-    colorscheme ir_black
+    colorscheme grb256
     se t_Co=256
 endif
 
@@ -143,6 +143,26 @@ function! TabMove(direction)
     endif
 endfunction
 
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+" Move vim split screen
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
 "================== CHANGES PRESSING KEYS ===============================
 "Promp Vim hotkey helpfile
 nnoremap <F12> :!less ~/.vim/helpcommand 
@@ -185,3 +205,8 @@ nnoremap <C-l> $
 "Move tab left or right
 nnoremap <S-b> :call TabMove(-1)<CR>
 nnoremap <S-n> :call TabMove(1)<CR>
+
+"Move vim split screen 
+"\mw to mark and \pw to swap with the current window
+nmap <silent> <leader>' :call MarkWindowSwap()<CR>
+nmap <silent> <leader>] :call DoWindowSwap()<CR>
