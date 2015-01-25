@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/tanthinh/.vim'
 let g:netrw_dirhist_2='/Users/tanthinh/Documents/Floating Cube/ansible-playbooks'
 let g:netrw_dirhist_3='/Users/tanthinh/Documents/Floating Cube/analytics-framework/views'
+let g:netrw_dirhist_4='/Users/tanthinh/Documents/Floating Cube/analytics-framework/.git'
