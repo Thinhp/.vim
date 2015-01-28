@@ -1,12 +1,14 @@
 "Filename : Vimrc
-"Version: 1
 "Author: TanThinh
 
-"======================== USING PATHOGEN ===================
+"======================== USING PATHOGEN (NOT NOW )===================
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
+
+"======================== USING VUNDLE =====================
+so $HOME/.vim/vundle.vim
 
 
 "=============== END KEY SETTINGS ==================================
@@ -28,6 +30,8 @@ set incsearch		"Show search matches as we type
 set cindent		"Settings for c indent
 set expandtab		"Use softtabstop spaces instead of tab for indentation
 set number		"Set line numbers
+set relativenumber      "Set relative
+set numberwidth=3       "Set width line number
 set shiftwidth=4	"Indent by 4 spaces when pressing >>, <<, ==
 set shiftround		"Use multiple of shiftwidth when indenting < or >
 set softtabstop=4	" indent by 4 spaces when pressing TAB
@@ -40,7 +44,7 @@ set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
 if (has('gui_running'))
-    colorscheme grb256
+    colorscheme clearance
     se t_Co=256
 else
     colorscheme grb256
@@ -51,19 +55,17 @@ endif
 set backspace=indent,eol,start
 
 "Always enable Powerline
-set laststatus=1    "Always show status line
+set laststatus=2    "Always show status line
 set encoding=utf-8  "	show Unicode glyphs
 
-"Do not keep backup files
+" Do not keep backup files
 "set nobackup
 "set nowritebackup
 "set noswapfile
 
-    " On second thought, keep backup files"
+" Keep backup files"
 set backupdir=~/tmp
 set directory=~/tmp
-
-filetype plugin indent on	"Turn on indentation for recognized file types
 
 " Auto change working directory to current file's
 set autochdir
@@ -82,19 +84,6 @@ endif
 "Auto call NerdTree when start-up
 "autocmd VimEnter * NERDTree
 
-
-"Auto quit NerdTree if it stands alone
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
 "Auto quit both NerdTree and Tagbar
 "autocmd WinEnter * call s:CloseNerdTreeTagBar()
 "function! s:CloseNerdTreeTagBar()
@@ -110,14 +99,6 @@ endfunction
 "    endif
 "  endif
 "endfunction
-
-" Auto reload .vimrc
-" The call Pl#Load() at the end is to reload Powerine
-""augroup myvimrc
-    ""au!
-    ""au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | 
-    ""if has('gui_running') | so $MYGVIMRC | endif | call Pl#Load()
-""augroup END
 
 "Auto enter Tagbar when start up"
 "autocmd VimEnter * TagbarOpen
@@ -162,6 +143,12 @@ function! DoWindowSwap()
     "Hide and open so that we aren't prompted and keep history
     exe 'hide buf' markedBuf 
 endfunction
+
+" Rainbow parenthese always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 "================== CHANGES PRESSING KEYS ===============================
 "Promp Vim hotkey helpfile
