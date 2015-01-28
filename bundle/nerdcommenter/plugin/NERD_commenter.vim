@@ -114,7 +114,9 @@ let s:delimiterMap = {
     \ 'cmake': { 'left': '#' },
     \ 'coffee': { 'left': '#' },
     \ 'conkyrc': { 'left': '#' },
+    \ 'context': { 'left': '%', 'leftAlt': '--' },
     \ 'cpp': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
+    \ 'cuda': { 'left': '/*','right': '*/', 'leftAlt': '//' },
     \ 'crontab': { 'left': '#' },
     \ 'cs': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'csp': { 'left': '--' },
@@ -180,7 +182,7 @@ let s:delimiterMap = {
     \ 'groovy': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'gsp': { 'left': '<%--', 'right': '--%>', 'leftAlt': '<!--','rightAlt': '-->'},
     \ 'gtkrc': { 'left': '#' },
-    \ 'haskell': { 'left': '{-','right': '-}', 'leftAlt': '-- ' },
+    \ 'haskell': { 'left': '{-','right': '-}', 'leftAlt': '--' },
     \ 'hb': { 'left': '#' },
     \ 'h': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'haml': { 'left': '-#', 'leftAlt': '/' },
@@ -288,7 +290,7 @@ let s:delimiterMap = {
     \ 'pilrc': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'pine': { 'left': '#' },
     \ 'plm': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
-    \ 'plsql': { 'left': '--', 'leftAlt': '/*', 'rightAlt': '*/' },
+    \ 'plsql': { 'left': '-- ', 'leftAlt': '/*', 'rightAlt': '*/' },
     \ 'po': { 'left': '#' },
     \ 'postscr': { 'left': '%' },
     \ 'pov': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
@@ -301,7 +303,7 @@ let s:delimiterMap = {
     \ 'psf': { 'left': '#' },
     \ 'ptcap': { 'left': '#' },
     \ 'puppet': { 'left': '#' },
-    \ 'python': { 'left': '# ' },
+    \ 'python': { 'left': '#' },
     \ 'radiance': { 'left': '#' },
     \ 'ratpoison': { 'left': '#' },
     \ 'r': { 'left': '#' },
@@ -313,6 +315,7 @@ let s:delimiterMap = {
     \ 'rgb': { 'left': '!' },
     \ 'rib': { 'left': '#' },
     \ 'robots': { 'left': '#' },
+    \ 'rspec': { 'left': '#' },
     \ 'ruby': { 'left': '#' },
     \ 'sa': { 'left': '--' },
     \ 'samba': { 'left': ';', 'leftAlt': '#' },
@@ -349,9 +352,9 @@ let s:delimiterMap = {
     \ 'specman': { 'left': '//' },
     \ 'spectre': { 'left': '//', 'leftAlt': '*' },
     \ 'spice': { 'left': '$' },
-    \ 'sql': { 'left': '--' },
-    \ 'sqlforms': { 'left': '--' },
-    \ 'sqlj': { 'left': '--' },
+    \ 'sql': { 'left': '-- ' },
+    \ 'sqlforms': { 'left': '-- ' },
+    \ 'sqlj': { 'left': '-- ' },
     \ 'sqr': { 'left': '!' },
     \ 'squid': { 'left': '#' },
     \ 'st': { 'left': '"' },
@@ -402,6 +405,8 @@ let s:delimiterMap = {
     \ 'xquery': { 'left': '(:', 'right': ':)' },
     \ 'z8a': { 'left': ';' }
     \ }
+
+let g:NERDDelimiterMap = s:delimiterMap
 
 if exists("g:NERDCustomDelimiters")
     call extend(s:delimiterMap, g:NERDCustomDelimiters)
