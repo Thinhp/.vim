@@ -49,6 +49,8 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_register_as_syntastic_checker = 0
 
+" [ CUSTOM CONFIG ]
+"
 " Vim-gitgutter - Provides modified git info for airline
 " ======================================================
 Plugin 'airblade/vim-gitgutter'
