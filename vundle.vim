@@ -1,4 +1,4 @@
-" vim:fdm=marker
+"vim:fdm=marker
 filetype off "required*
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
@@ -45,9 +45,9 @@ let g:mta_filetypes = {
 
 " You complete me - completion
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_register_as_syntastic_checker = 0
+"let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_register_as_syntastic_checker = 0
 
 " [ CUSTOM CONFIG ]
 "
@@ -78,13 +78,14 @@ let g:markdown_fenced_languages = ['javascript', 'js=javascript',
 
 " Syntastic - checking syntax
 Plugin 'scrooloose/syntastic'
-let g:syntastic_python_checkers=['frosted']
+"let g:syntastic_python_checkers=['frosted']
 let g:syntastic_javascript_checkers=['jsxhint']
 let g:syntastic_sh_checkers=['sh']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open = 1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " delimitMate - Auto bracket 
 " ================================================================

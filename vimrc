@@ -39,7 +39,7 @@ set history=1000	"remember more commands and search history
 set undolevels=1000	"Use many muchos levels of undo
 set wildignore =*.swp,*.bak,*.pyc,*.class
 set title		"Change terminal title
-set colorcolumn=80	"80-character indicator line
+" set colorcolumn=80	"80-character indicator line
 set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
@@ -80,6 +80,9 @@ set modifiable
 if (!has('gui_running'))
 	set ttimeoutlen=0
 endif
+
+" Uncomment if using MACVIM to be able to use clipboard
+set clipboard=unnamed
 
 "Auto call NerdTree when start-up
 "autocmd VimEnter * NERDTree
