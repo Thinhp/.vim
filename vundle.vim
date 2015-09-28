@@ -22,14 +22,31 @@ Plugin 'closetag.vim' "Auto close tag
 Plugin 'pangloss/vim-javascript' "Javascript syntax
 Plugin 'Glench/Vim-Jinja2-Syntax' "Jinja syntax
 Plugin 'mitsuhiko/vim-python-combined' "Python combined
-Plugin 'mxw/vim-jsx' "React JSX syntax
 Plugin 'Z1MM32M4N/vim-superman' "Super MAN
+Plugin 'marijnh/tern_for_vim' "Tern_for_vim
+
+"=== React-snippets and its dependencies ===
+"vim-react-snippets:
+Plugin 'justinj/vim-react-snippets'
+
+" SnipMate and its dependencies:
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+" " Other sets of snippets (optional):
+Plugin 'honza/vim-snippets'
 
 " [ CUSTOM CONFIG ]
 " Tagbar - display functions
 Plugin 'majutsushi/tagbar'
 " F9 toggles tagbar
 nnoremap <f9> :TagbarToggle<cr>
+
+" React JSX syntax
+" ===============================================================
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " MatchTagAlways - Highlight HTML tags {{{
 " ================================================================
@@ -80,6 +97,7 @@ let g:markdown_fenced_languages = ['javascript', 'js=javascript',
 Plugin 'scrooloose/syntastic'
 "let g:syntastic_python_checkers=['frosted']
 let g:syntastic_javascript_checkers=['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_sh_checkers=['sh']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_highlighting = 1

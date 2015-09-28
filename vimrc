@@ -44,7 +44,7 @@ set clipboard=unnamedplus "copy-paste in a same way ( same clipboard as system)
 
 "Set colorscheme 
 if (has('gui_running'))
-    colorscheme clearance
+    colorscheme hybrid
     se t_Co=256
 else
     colorscheme grb256
